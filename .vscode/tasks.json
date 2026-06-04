@@ -1,0 +1,109 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build CMYSQL",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "src\\main.c", "src\\conexao.c",
+                "-g",
+                "-I", "C:\\msys64\\ucrt64\\include\\mariadb",
+                "-I", "include",
+                "-L", "C:\\msys64\\ucrt64\\lib",
+                "-lmariadb",
+                "-o", "output\\cmysql.exe"
+            ],
+            "options": {
+                "env": { "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}" }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build CMYSQL (sem bat)",
+            "type": "shell",
+            "command": "C:\\msys64\\ucrt64\\bin\\gcc.exe",
+            "args": [
+                "src\\main.c", "src\\conexao.c",
+                "-g",
+                "-I", "C:\\msys64\\ucrt64\\include\\mariadb",
+                "-I", "include",
+                "-L", "C:\\msys64\\ucrt64\\lib",
+                "-lmariadb",
+                "-o", "output\\cmysql.exe"
+            ],
+            "options": {
+                "env": { "PATH": "C:\\msys64\\ucrt64\\bin;${env:PATH}" }
+            },
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Build CMYSQL Linux",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "src/main.c", "src/conexao.c",
+                "-g",
+                "-I", "/usr/include/mariadb",
+                "-I", "include",
+                "-L", "/usr/lib",
+                "-lmariadb",
+                "-o", "output/cmysql"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": "$gcc"
+        },
+        {
+            "label": "Docker: Build",
+            "type": "shell",
+            "command": "docker compose build",
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+        },
+        {
+            "label": "Docker: Up",
+            "type": "shell",
+            "command": "docker compose up --build",
+            "isBackground": true,
+            "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+        },
+        {
+            "label": "Docker: Down",
+            "type": "shell",
+            "command": "docker compose down",
+            "presentation": { "reveal": "always", "panel": "shared" }
+        },
+        {
+            "label": "Docker: Debug Up",
+            "type": "shell",
+            "command": "docker compose -f docker-compose.debug.yml up --build -d",
+            "presentation": { "reveal": "always", "panel": "shared", "clear": true }
+        },
+        {
+            "label": "Docker: Debug Down",
+            "type": "shell",
+            "command": "docker compose -f docker-compose.debug.yml down",
+            "presentation": { "reveal": "always", "panel": "shared" }
+        }
+    ]
+}

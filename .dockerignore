@@ -1,0 +1,9 @@
+.git/
+.vscode/
+config/
+output/
+*.md
+.gitignore
+.dockerignore
+*.exe
+*.o

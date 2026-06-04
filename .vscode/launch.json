@@ -1,0 +1,70 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Bat Win",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/output/cmysql.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "preLaunchTask": "Build CMYSQL"
+        },
+        {
+            "name": "Run GCC",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/output/cmysql.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "C:\\msys64\\ucrt64\\bin;${env:PATH}"
+                }
+            ],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "preLaunchTask": "Build CMYSQL (sem bat)"
+        },
+        {
+            "name": "Run Linux",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/output/cmysql",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "preLaunchTask": "Build CMYSQL Linux"
+        },
+        {
+            "name": "Docker Debug",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/output/cmysql",
+            "miDebuggerServerAddress": "localhost:2345",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\msys64\\ucrt64\\bin\\gdb.exe",
+            "sourceFileMap": {
+                "/app": "${workspaceFolder}"
+            },
+            "preLaunchTask": "Docker: Debug Up"
+        }
+    ]
+}

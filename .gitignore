@@ -1,0 +1,13 @@
+# Binários gerados
+output/cmysql.exe
+output/cmysql
+output/*.exe
+
+# Logs de build
+output/err.txt
+output/gcc_error.txt
+
+# Arquivos objeto
+*.o
+
+# Docker

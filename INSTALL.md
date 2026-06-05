@@ -199,17 +199,18 @@ cmysql/
 
 ---
 
-## 2. Instalar GCC e MariaDB Connector/C
+## 2. Instalar GCC, GDB e MariaDB Connector/C
 
 ```bash
 sudo apt update
-sudo apt install gcc libmariadb-dev
+sudo apt install gcc gdb libmariadb-dev
 ```
 
 **Verificar instalação:**
 
 ```bash
 gcc --version
+gdb --version
 ```
 
 ---
@@ -267,7 +268,29 @@ gcc src/main.c src/conexao.c -I /usr/include/mariadb -I include -L /usr/lib -lma
 
 ---
 
-## 5. Erros comuns
+## 5. Configurar no VS Code
+
+### 5.1 Instalar extensão C/C++ (obrigatória para debug)
+
+A extensão **C/C++** da Microsoft fornece o tipo de depurador `cppdbg`. **Sem ela o `F5` não funciona.**
+
+- Pressione `Ctrl+Shift+X`
+- Pesquise **C/C++** (publisher: Microsoft, id: `ms-vscode.cpptools`)
+- Clique em **Install**
+
+> No WSL2, instale a extensão **dentro do WSL** (a aba "WSL: Ubuntu" no painel de extensões), não apenas no host Windows.
+
+### 5.2 Build no VS Code
+
+Pressione `Ctrl+Shift+B` e selecione **Build CMYSQL Linux**.
+
+### 5.3 Rodar e depurar no VS Code
+
+Com a extensão C/C++ e o GDB instalados, pressione `F5` e selecione **Run Linux**.
+
+---
+
+## 6. Erros comuns
 
 | Erro | Causa | Solução |
 |------|-------|---------|

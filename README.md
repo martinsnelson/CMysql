@@ -10,7 +10,7 @@ Um projeto em C que se conecta a um banco de dados MySQL/MariaDB, compilável no
 |---|---|---|
 | Windows | GCC via MSYS2 UCRT64 | `mingw-w64-ucrt-x86_64-libmariadbclient` |
 | Linux | GCC (sistema) | `libmariadb-dev` (apt) |
-| Docker | GCC dentro do container | `libmariadb-dev` (Debian) |
+| Docker | GCC dentro do container | `libmariadb-dev` (Alpine) |
 
 ## Pré-requisitos
 
@@ -87,7 +87,7 @@ docker-compose -f docker-compose.debug.yml down
 ```
 cmysql/
 ├── include/
-│   ├── conexao.h            - Protótipos das funções de conexão
+│   ├── conexao.h            - Interface das funções de conexão
 │   └── config.h             - Credenciais do banco de dados
 ├── src/
 │   ├── main.c               - Entrada do programa

@@ -55,16 +55,7 @@
         {
             "label": "Build CMYSQL Linux",
             "type": "shell",
-            "command": "gcc",
-            "args": [
-                "src/main.c", "src/conexao.c",
-                "-g",
-                "-I", "/usr/include/mariadb",
-                "-I", "include",
-                "-L", "/usr/lib",
-                "-lmariadb",
-                "-o", "output/cmysql"
-            ],
+            "command": "mkdir -p output && gcc src/main.c src/conexao.c -g -I /usr/include/mariadb -I include -L /usr/lib -lmariadb -o output/cmysql",
             "group": "build",
             "presentation": {
                 "reveal": "always",

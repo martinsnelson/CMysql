@@ -1,6 +1,6 @@
-# CMYSQL - Conexão C com MySQL
+# CMYSQL - Conexão C / C++ com MySQL
 
-Um projeto em C que se conecta a um banco de dados MySQL/MariaDB, compilável no **Windows** (MSYS2), **Linux** e via **Docker**.
+Um projeto em C ou C++ que se conecta a um banco de dados MySQL/MariaDB, compilável no **Windows** (MSYS2), **Linux** e via **Docker**.
 
 > Para instalação do zero, veja o [Guia de Instalação](INSTALL.md).
 
